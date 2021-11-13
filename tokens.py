@@ -28,10 +28,10 @@ def crear():
             
             print("enviado")
             
-            return {"response":"ok", "token":token}
+            return token
         except Exception as e:
             print(e.message)
-            return {"response":"ko", "token":""}
+            return ""
    
         
         
