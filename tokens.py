@@ -23,6 +23,7 @@ def crear():
         nombre=request.args.get("nombre")
         idp=request.args.get("id")
         id_rol=request.args.get("id_rol")
+        
                  
         try:
             secret_key=os.environ.get("JWT_SECRET_TOKEN")
@@ -30,10 +31,10 @@ def crear():
             
             print("enviado")
             
-            return {"response":"ok", "token":token}
+            return token
         except Exception as e:
             print(e.message)
-            return {"response":"ko", "token":""}
+            return ""
 
 
 @app.route("/validar-token")
